@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "GPT Exporter",
+  "version": "1.0.0",
+  "description": "Export ChatGPT conversations as PDF.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*"
+  ],
+  "action": {
+    "default_title": "GPT Exporter",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "export.html",
+        "export.css",
+        "export.js"
+      ],
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ]
+    }
+  ]
+}

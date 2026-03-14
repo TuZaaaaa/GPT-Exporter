@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Exporter Print View</title>
+    <link rel="stylesheet" href="export.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div>
+          <div class="eyebrow">Chat Transcript</div>
+          <h1 id="conversationTitle">正在生成 PDF 视图...</h1>
+          <p id="conversationMeta"></p>
+        </div>
+        <button id="printButton" type="button">打印 / 保存为 PDF</button>
+      </header>
+      <main id="messages" class="messages"></main>
+    </div>
+    <template id="messageTemplate">
+      <article class="message">
+        <div class="message-role"></div>
+        <div class="message-body"></div>
+      </article>
+    </template>
+    <script src="export.js"></script>
+  </body>
+</html>
